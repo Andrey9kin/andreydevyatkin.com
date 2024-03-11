@@ -1,0 +1,28 @@
+<section id="{{.ctx.hash_id}}" class="home-section" {{with .ctx.style}}style="{{. | safeCSS}}"{{end}} {{ with .ctx.extra_attributes }}{{print . | safeHTMLAttr}}{{end}}>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+          {{ with .ctx.heading }}<h2>{{ . |markdownify }}</h2>{{ end }}
+      </div>
+      {{if .ctx.image_src}}
+      <div class="col-lg-5 {{if eq .ctx.image_position "right"}}order-md-2{{end}}">
+        <div id="profile">
+            {{ $avatar_image := .ctx.image_src }}
+            <img class="img-fluid" src="{{ printf "img/%s" $avatar_image | relURL }}" alt="{{.ctx.image_alt}}">
+        </div>
+      </div>
+      {{ end }}
+      
+      <div class="{{if .ctx.image_src}}col-lg-7 {{else}}col-lg-8 mx-auto{{end}}">
+        <div class="portrait-title">
+          {{ with .ctx.content_heading }}<h2>{{ . |markdownify }}</h2>{{ end }}
+          {{ with .ctx.content_subtitle }}<h3 class="d-inline-block">{{ . | markdownify | emojify }}</h3>{{ end }}
+        </div>
+        
+        {{ .ctx.content | markdownify }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

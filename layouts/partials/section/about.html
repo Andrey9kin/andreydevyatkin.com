@@ -1,0 +1,84 @@
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $bg := .ctx.design.background }}
+
+<section id="{{.ctx.hash_id}}" class="home-section" {{with .ctx.style}}style="{{. | safeCSS}}"{{end}} {{ with .ctx.extra_attributes }}{{print . | safeHTMLAttr}}{{end}}>
+    <div class="container">
+
+    {{ if .ctx.hero_media }}
+    <div class="row"
+    itemprop="author" itemscope itemtype="http://schema.org/Person"
+    itemref="{{ if site.Params.email }}person-email{{ end }}{{ if site.Params.phone }} person-telephone{{ end }}{{ if site.Params.address}} person-address{{ end }}">
+        <div class="col-md-6 order-md-1 text-center text-md-left align-self-center">
+    {{ end }}
+
+    {{ with .ctx.content }}
+    <div itemprop="description">{{ . | markdownify }}</div>
+    {{ end }}
+
+    {{/* Call-to-action link */}}
+    {{ if .ctx.btn.url }}
+      {{ $pack := or .ctx.btn.icon_pack "fas" }}
+      {{ $pack_prefix := $pack }}
+      {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+        {{ $pack_prefix = "fa" }}
+      {{ end }}
+      {{ $link := .ctx.btn.url }}
+      {{ $scheme := (urls.Parse $link).Scheme }}
+      {{ $target := "" }}
+      {{ if not $scheme }}
+        {{ $link = $link | relLangURL }}
+      {{ else if in (slice "http" "https") $scheme }}
+        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+      {{ end }}
+    <p class="mt-4">
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg  page-scroll">{{ if .ctx.btn.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .ctx.btn.icon }} mr-2" aria-hidden="true"></i>{{end}}{{ .ctx.btn.label | markdownify | emojify | safeHTML }}</a>
+
+      {{/* Alternative Call-to-action link */}}
+      {{ if .ctx.btn_alt.url }}
+        {{ $link := .ctx.btn_alt.url }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = $link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn btn-lg {{if $bg.text_color_light}}btn-outline-light{{else}}btn-outline-primary{{end}} page-scroll">{{ if .ctx.btn_alt.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .ctx.btn_alt.icon }} mr-2" aria-hidden="true"></i>{{end}}{{ .ctx.btn_alt.label | markdownify | emojify | safeHTML }}</a>
+      {{ end }}
+    </p>
+    {{ end }}
+
+  {{/* Hero image */}}
+  {{ if .ctx.hero_media }}
+    </div>
+    <div class="col-10 mx-auto col-md-6 order-md-2 hero-media">
+        <img class="hero-img img-fluid" src="{{ printf "img/%s" .ctx.hero_media | relURL }}" alt=""
+          itemprop="image" alt="Avatar">
+
+          <ul class="list-inline network-icon text-right mb-0">
+            {{/* Contact links. */}}
+            {{ range site.Params.contact_links }}
+            {{ $pack := or .icon_pack "fas" }}
+            {{ $pack_prefix := $pack }}
+            {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+            {{ $pack_prefix = "fa" }}
+            {{ end }}
+            {{ $link := .link }}
+            {{ $scheme := (urls.Parse $link).Scheme }}
+            {{ $target := "" }}
+            {{ if not $scheme }}
+            {{ $link = .link | relLangURL }}
+            {{ else if in (slice "http" "https") $scheme }}
+            {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+            <li class="list-inline-item">
+              <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} title="{{.name}}"><i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}" aria-hidden="true"></i></a>
+            </li>
+            {{ end }}
+          </ul>
+    </div>
+    </div>
+    {{ end }}
+</div>
+</section>

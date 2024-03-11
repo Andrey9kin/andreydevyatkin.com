@@ -1,0 +1,20 @@
+<section id="{{.ctx.hash_id}}" class="home-section" {{with .ctx.style}}style="{{. | safeCSS}}"{{end}} {{ with .ctx.extra_attributes }}{{print . | safeHTMLAttr}}{{end}}>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                {{ with .ctx.heading }}<h2>{{ . |markdownify }}</h2>{{ end }}
+            </div>
+        
+            <div class="frame-list">
+            {{ range .ctx.talks }}
+                <div class="frame-wrapper">
+                    <iframe width="450" height="360" frameborder="0" allowfullscreen="" src="{{.video_url}}"></iframe>
+                    
+                    <h3>{{.title}}</h3>
+                </div>
+            {{ end }}
+            </div>
+
+        </div>
+    </div>
+</section>
