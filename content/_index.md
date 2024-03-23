@@ -33,23 +33,15 @@ sections:
       #       label: 'Contact me'
 
       content: |
-          ## Hi, my name is Andrey Devyatkin
+          ## Andrey Devyatkin
 
-          I'm independent consultant specialized in building secure application delivery platforms on AWS using HashiStack and Kubernetes.
+          Andrey is a Principal AWS Consultant who specializes in infrastructure as code, security, and compliance for startups building on AWS.
 
-          -   **AWS architect** (6x certifications)
+          As a co-founder of [FivexL, the Cloud Engineering Specialists](https://fivexl.io), Andrey and his team provide expert guidance and services in AWS cloud infrastructure, helping businesses achieve their objectives through cutting-edge technology solutions.
 
-          -   **Continuous Integration** and **Continuous delivery** expert
+          Beyond his professional work, Andrey is actively involved in the tech community as an organizer of meetups and a public speaker, sharing his knowledge and experience with others. He is an active member of AWS Community Builders and AWS User Group Leaders programms.
 
-          -   Trainer (**Git**, **Jenkins**, **Docker**, **CI/CD**, **Terraform**, **Vault**)
-
-          - Public speaker
-
-          - Co-Founder at FivexL. Cloud Engineering Specialists
-
-          - Co-host at DevSecOps Talks Podcast
-
-          - Meetups organizer (Cloud Native Las Palmas de Gran Canaria, HashiCorp User Group Las Palmas de Gran Canaria).
+          Additionally, Andrey co-hosts the [DevSecOps Talks podcast](https://devsecops.fm), where he and his fellow hosts discuss the latest developments and best practices in DevSecOps, keeping listeners informed and up-to-date on critical industry trends.
 
     - type: 'section/simple'
       hash_id: 'consulting'
@@ -65,15 +57,13 @@ sections:
 
           * Immutable Could infrastructure using HashiCorp Packer and HashiCorp Terraform
 
-          * Orchestrating applications using AWS ECS/Kubernetes/HashiCorp Nomad
-
-          * Infrastructure and application secret management using HashiCorp Vault
+          * Orchestrating application deployment using AWS ECS
 
           * Cloud infrastructure and application security
 
           * Compliance in the Cloud environments
 
-          * Building and scaling Continuous Integration and Continuous Delivery pipelines using Jenkins
+          * Building and scaling Continuous Integration and Continuous Delivery pipelines
 
     - type: 'section/simple'
       hash_id: 'certificates'
