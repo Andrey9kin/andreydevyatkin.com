@@ -1,4 +1,8 @@
 ---
+title: 'Andrey Devyatkin | Homepage'
+draft: false
+headless: false
+
 sections:
     - type: 'section/about'
 
