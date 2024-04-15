@@ -20,9 +20,11 @@
                     {{ with site.GetPage "/talk" }}
                         {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 6 }}
                         {{ range $paginator.Pages }}
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            {{ partial "li_card" . }}
-                        </div>
+                            {{if ne .Params.headless true}}
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                {{ partial "li_card" . }}
+                            </div>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
                 </div>
