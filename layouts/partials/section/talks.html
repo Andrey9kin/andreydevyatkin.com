@@ -17,15 +17,11 @@
 
             <div class="col-12">
                 <div class="row justify-content-center">
-                    {{ with site.GetPage "/talk" }}
-                        {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 6 }}
-                        {{ range $paginator.Pages }}
-                            {{if ne .Params.headless true}}
+                    {{ range where site.Pages ".Type" "talk"}}
                             <div class="col-lg-4 col-md-6 mb-4">
                                 {{ partial "li_card" . }}
                             </div>
-                            {{ end }}
-                        {{ end }}
+                    
                     {{ end }}
                 </div>
               </div>

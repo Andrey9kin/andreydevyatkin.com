@@ -77,8 +77,8 @@ target = '$1'
 
 # Taxonomies.
 [taxonomies]
-    tag = ""
-    category = ""
+  tag = ""
+  category = ""
 #   publication_type = "publication_types"
 #   author = "authors"
 
