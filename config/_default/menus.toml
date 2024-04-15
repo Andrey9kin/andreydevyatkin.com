@@ -19,13 +19,13 @@
   weight = 30
 
 [[main]]
-  name = "Public speaking"
-  url = "#speaking"
+  name = "Talks"
+  url = "#talks"
   weight = 40
 
 [[main]]
-  name = "Talks"
-  url = "#talks"
+  name = "Public speaking log"
+  url = "#speaking"
   weight = 50
 
 # [[main]]
