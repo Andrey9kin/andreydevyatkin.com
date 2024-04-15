@@ -121,20 +121,20 @@ sections:
 
     - type: 'section/talks'
       hash_id: 'talks'
-      heading: 'Talks'
-      talks:
-          - video_url: 'https://www.youtube.com/embed/PI9lU9jDlE8'
-            title: 'Vault Configuration as Code via Terraform Stories From the Trenches'
+      heading: 'Recent & Upcoming Talks'
+      # talks:
+      #     - video_url: 'https://www.youtube.com/embed/PI9lU9jDlE8'
+      #       title: 'Vault Configuration as Code via Terraform Stories From the Trenches'
 
-          - video_url: 'https://www.youtube.com/embed/t6ZKhY0-_cA'
-            title: 'Integrating HashiCorp Vault and K8s Apps - No Code Changes Needed'
+      #     - video_url: 'https://www.youtube.com/embed/t6ZKhY0-_cA'
+      #       title: 'Integrating HashiCorp Vault and K8s Apps - No Code Changes Needed'
 
-          - video_url: 'https://www.youtube.com/embed/1UJdzpEr3rg'
-            title: "Looking for that needle in the hay of Vault's audit log"
+      #     - video_url: 'https://www.youtube.com/embed/1UJdzpEr3rg'
+      #       title: "Looking for that needle in the hay of Vault's audit log"
 
-          - video_url: 'https://www.youtube.com/embed/hvQeWJSDwkE'
-            title: 'Getting Git right - Git Merge 2018'
+      #     - video_url: 'https://www.youtube.com/embed/hvQeWJSDwkE'
+      #       title: 'Getting Git right - Git Merge 2018'
 
-          - video_url: 'https://www.youtube.com/embed/JpkJDvhXkrE'
-            title: 'Buffer or suffer? Growth pain of Continuous Delivery pipelines and what to do about it'
+      #     - video_url: 'https://www.youtube.com/embed/JpkJDvhXkrE'
+      #       title: 'Buffer or suffer? Growth pain of Continuous Delivery pipelines and what to do about it'
 ---
